@@ -5,7 +5,6 @@ body{
     font-weight: 400;
     line-height: 1.4;
     font-family: 'Nanum Gothic', sans-serif;
-    height: 3000px;
 }
 img{
     display: block;
@@ -49,6 +48,32 @@ a{
 .btn.btn--black:hover{
     background-color: #222;
     color: #fff;
+}
+.back-to-position{
+    opacity: 0;
+    transition: 1s;
+}
+.back-to-position.to-right{
+    transform: translateX(-150px);
+}
+.back-to-position.to-left{
+    transform: translateX(150px);
+}
+.showScroll .back-to-position{
+    opacity: 1;
+    transform: translateX(0);
+}
+.showScroll .back-to-position.delay-0{
+    transition-delay: 0s;
+}
+.showScroll .back-to-position.delay-1{
+    transition-delay: .3s;
+}
+.showScroll .back-to-position.delay-2{
+    transition-delay: .6s;
+}
+.showScroll .back-to-position.delay-3{
+    transition-delay: .9s;
 }
 
 /* HEADER */
@@ -519,13 +544,94 @@ header .badges .badge{
 /* BEANS */
 .main-bean_wrap{
     height: 573px;
-    /* background-image: url("../images/summer/2021_summer2_bean_bg.jpg"); */
+    background-image: url("../images/summer/2021_summer2_bean_bg.jpg");
     background-position: center;
     background-size: cover;
 }
 .main-bean_wrap .inner{
-    background-color: orange;
+    /* max-width: 1080px; */
+    height: 100%;
 }
+.main-bean_wrap .bean_img_box{
+    position: absolute;
+    top: 14.5%;
+    left: 16%;
+    max-width: 216px;
+    width: 20%;
+}
+.main-bean_wrap .bean_txt_box{
+    position: absolute;
+    top: 32.8%;
+    right: 0.4%;
+    max-width: 563px;
+    width: 53%;
+}
+.main-bean_wrap .bean_txt_box .btn_bean_detail{
+    margin-top: 28px;
+    width: 125px;
+    height: 38px;
+    /* z-index: 6; */
+}
+.main-bean_wrap .bean_txt_box .btn_bean_detail .btn.btn--bean{
+    border: 2px solid #025964;
+    color: #025964;
+}
+.main-bean_wrap .bean_txt_box .btn_bean_detail .btn.btn--bean:hover{
+    background-color: #025964;
+    color: #fff;
+}
+
+/* RESERVE */
+.reserve_wrap{
+    position: relative;
+    height: 400px;
+    background: url("../images/summer/reserve_sundried_brazil_bg2.jpg") no-repeat center top;
+    background-size: cover;
+    overflow: hidden;
+}
+.reserve_wrap .reserve_inner:before{
+    display: block;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 214px;
+    height: 130px;
+    background: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_sundried_brazil_bg_shape.png) no-repeat left top;
+    content: '';
+}
+.reserve_wrap .reserve_inner .reserve_title{
+    position: relative;
+    padding-top: 94px;
+    max-width: 1080px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: 18%;
+    box-sizing: border-box;
+}
+.reserve_wrap .reserve_inner .reserve_visual {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    /* opacity: 0; */
+}
+.reserve_wrap .reserve_inner .reserve_detail-btn_wrap {
+    position: relative;
+    max-width: 1080px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 320px;
+    box-sizing: border-box;
+}
+.reserve_wrap .reserve_inner .reserve_detail-btn_wrap .btn.btn--brown{
+    border: 2px solid #815932;
+    color: #815932;
+}
+.reserve_wrap .reserve_inner .reserve_detail-btn_wrap .btn.btn--brown:hover{
+    background-color: #815932;
+    color: #fff;
+}
+
 
 /* YOUTUBE VIDEO */
 .youtube{
@@ -552,10 +658,293 @@ header .badges .badge{
 }
 .youtube .youtube__cover{
     background-image: url("../images/video_cover_pattern.png");
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .05);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+#player{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.youtube .inner{
+    height: 700px;
+    /* background-color: royalblue; */
+}
+.youtube .floating1{
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+.youtube .floating2{
+    position: absolute;
+    top: 350px;
+    left: 150px;
+}
+.youtube .floating3{
+    position: absolute;
+    bottom: -200px;
+    right: 0;
+}
+
+/* PICK YOUR FAVORITE */
+.pick-your-favorite{
+    background-image: url("../images/favorite_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.pick-your-favorite .floating3{
+    position: absolute;
+    top: -250px;
+    right: 0;
+}
+.pick-your-favorite .inner{
+    padding: 110px 0;
+}
+.pick-your-favorite .text-group{
+    margin-left: 20px;
+    display: flex;
+    width: 362px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.pick-your-favorite .text-group .title{
+    margin-bottom: 40px;
+}
+.pick-your-favorite .text-group .description{
+    margin-bottom: 40px;
+}
+.pick-your-favorite .fav-img {
+    position: absolute;
+    top: 100px;
+    right: -10px;
+    width: 672px;
+    height: 458px;
+    background-image: url(https://image.istarbucks.co.kr/img/event/2021/2021_summer2_fav.png);
+}
+
+/* RESERVE STORE */
+.reserve-store{
+    background-image: url("../images/reserve_store_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.reserve-store .inner{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reserve-store .medal{
+    width: 334px;
+    height: 334px;
+    perspective: 600px;
+}
+.reserve-store .medal .front,
+.reserve-store .medal .back{
+    width: 334px;
+    height: 334px;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: 1s;
+}
+.reserve-store .medal .front{
+    transform: rotateY(0deg);
+}
+.reserve-store .medal:hover .front{
+    transform: rotateY(180deg);
+}
+.reserve-store .medal .back{
+    transform: rotateY(-180deg);
+}
+.reserve-store .medal:hover .back{
+    transform: rotateY(0deg);
+}
+.reserve-store .medal .back .btn.btn--black{
+    position: absolute;
+    top: 240px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+/* FIND STORE */
+.find-store{
+    background-image: url("../images/find_store_bg.jpg");
+}
+.find-store .inner{
+    height: 400px;
+}
+.find-store .texture1{
+    position: absolute;
+    top: 0;
+    left: 400px;
+}
+.find-store .texture2{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.find-store .picture{
+    position: absolute;
+}
+.find-store .picture1{
+    top: 150px;
+    left: 300px;
+    z-index: 1;
+}
+.find-store .picture2{
+    top: 0;
+    left: 50px;
+}
+.find-store .text-group{
+    position: absolute;
+    top: 120px;
+    left: 550px;
+}
+.find-store .text-group .title{
+    margin-bottom: 20px;
+}
+.find-store .text-group .description{
+    margin-bottom: 20px;
+}
+
+/* AWARDS */
+.awards{
+    background-color: #272727;
+}
+.awards .inner{
+    padding: 40px 0;
+}
+.awards .swiper-container{
+    width: 100%;
+    height: 40px;
+}
+.awards .swiper-prev,
+.awards .swiper-next{
+    width: 42px;
+    height: 42px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    outline: none;
+    color: #fff;
+    opacity: .3;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.awards .swiper-prev{
+    left: -100px;
+}
+.awards .swiper-next{
+    right: -100px;
+}
+.awards .swiper-prev:hover,
+.awards .swiper-next:hover{
+    background-color: #fff;
+    color: #333;
+}
+
+/* FOOTER */
+footer{
+    background-color: #272727;
+    border-top: 1px solid #333;
+}
+footer .inner{
+    padding: 40px 0 60px 0;
+}
+footer .menu{
+    display: flex;
+    justify-content: center;
+}
+footer .menu li{
+    position: relative;
+}
+footer .menu li::before{
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1px;
+    margin: auto;
+}
+footer .menu li:last-child::before{
+    display: none;
+}
+footer .menu li a{
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 15px;
+    display: block;
+}
+footer .menu li a.green{
+    color: #669900;
+}
+footer .btn-group{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+footer .btn-group .btn{
+    font-size: 12px;
+    margin-right: 10px;
+}
+footer .btn-group .btn:last-child{
+    margin-right: 0;
+}
+footer .info{
+    margin-top: 30px;
+    text-align: center;
+}
+footer .info span{
+    margin-right: 20px;
+    color: #999;
+    font-size: 12px;
+}
+footer .info span:last-child{
+    margin-right: 0;
+}
+footer .copyright{
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+}
+footer .logo{
+    margin: 30px auto 0;
+}
+
+#to-top{
+    width: 42px;
+    height: 42px;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9;
 }
