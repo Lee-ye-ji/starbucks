@@ -1,16 +1,3 @@
-// 메뉴바 slideDown 효과
-$('.item__name').bind('mouseover focus', function (e) {
-    $(this).addClass('on');
-    $(this).next().stop(true, true).slideDown();
-
-    e.preventDefault();
-});
-
-$('.item').bind('mouseleave', function () {
-    $('.item__name').removeClass('on');
-    $('.item__contents').slideUp();
-});
-
 // 오른쪽 광고 스크롤 시 사라지는 효과
 const badgeEl = document.querySelector('header .badges');;
 
