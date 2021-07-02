@@ -1,7 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9f2f756f-e1fc-48d9-9c07-b7d7433d8aaa/deploy-status)](https://app.netlify.com/sites/flamboyant-lumiere-482a1e/deploys)
 
 # ☕ STARBUCKS
-[DEMO(로그인)](https://priceless-chandrasekhar-7765a2.netlify.app)
+[DEMO(로그인)<br>
+![화면 캡처 2021-07-02 104845](https://user-images.githubusercontent.com/59958929/124209088-db07ec80-db23-11eb-9e0f-9a69269dcac6.png)](https://priceless-chandrasekhar-7765a2.netlify.app)
 
 ## 문자 인코딩(Character Encoding) 설정
 
